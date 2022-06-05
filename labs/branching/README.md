@@ -2,7 +2,7 @@
 
 Branching means you diverge from the main line of development and continue to do work without messing with that main line. The way Git branches is incredibly lightweight, making branching operations nearly instantaneous, and switching back and forth between branches generally just as fast.
 
-For this Lab we will be using our learning-gitlab-1 project. From the GitLab dashboard click on the project and select **learning-gitlab-1 > Repository > Branches**.
+For this Lab we will be using our `my-spring-project` project. From the GitLab dashboard click on the project and select **my-spring-project > Repository > Branches**.
 
 ![](/imgs/branches-1.png)
 
@@ -35,7 +35,3 @@ return "Hello, learning gitlab!";
 > 3. Commit to the hello-world branch
 > 4. Uncheck `Start a new merge request` checkbox.
 > 4. Click on `Commit` button.
-
-
-
-
