@@ -1,6 +1,6 @@
 ## Cloning
 
-For this lab we will be needing the git cli. If the cli is not available on your machine please follow the [setup document](../setup) to install the cli.
+For this lab we will be needing the git cli. If the cli is not available on your machine please follow the [setup document](/setup/README.md) to install the cli.
 
 Git cloning is a powerful feature and provides a more convenient way to edit files inside your repository. You can clone the repository to your local machine and make changes to several files quickly.
 The cli also enables you to use more advance functions of git, the GitLab UI only provides basic functionality. Using GitLab WebIDE you can make smaller changes but offline development is faster and that can be done using cloning the repository.
