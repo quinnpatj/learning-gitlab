@@ -47,3 +47,16 @@ Before installing generators you need to install `nodejs` and `Yeoman`. The gene
   cd <your-repo-name>
   yo node-ms # you will be presented with a set of questions in the interactive prompt
   ```
+  A sample has been presented here, make sure you name your project as above:
+
+  ![](/imgs/nodems-generator-ques.png)
+
+  - Once the project skeleton is created, the generator will provide you a set of git commands to push your code to the GitLab's instance.
+  - You have to create the project in GitLab with the same endpoint defined while creating the project. Make sure you create the project under your subgroup
+
+  ![](/imgs/create-blank-project.png)
+
+  ![](/imgs/blank-repo-created.png)
+
+  - Push the code and see the Pipeline running for the project
+  ![](/imgs/nodems-pipeline.png)
