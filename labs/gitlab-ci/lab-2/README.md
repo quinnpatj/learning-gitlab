@@ -33,7 +33,7 @@ include:
 You can also use shorter syntax to define the path:
 
 ```yaml
-include: '/templates/.gitlab-ci-production.yml'
+include: '/templates/.gitlab-ci-template.yml'
 ```
 
 📋 Lab: Create a file `.gitlab-ci-template.yml` inside `templates` folder and add the below content:
@@ -74,6 +74,6 @@ stages:
   - test
   - deploy
 
-include: '/templates/.gitlab-ci-production.yml'
+include: '/templates/.gitlab-ci-template.yml'
 
 ```
