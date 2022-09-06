@@ -58,5 +58,6 @@ Before installing generators you need to install `nodejs` and `Yeoman`. The gene
 
   ![](/imgs/blank-repo-created.png)
 
-  - Push the code and see the Pipeline running for the project
-  ![](/imgs/nodems-pipeline.png)
+- Push the code and see the Pipeline running for the project
+
+![](/imgs/nodems-pipeline.png)
