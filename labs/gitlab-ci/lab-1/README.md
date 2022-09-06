@@ -17,8 +17,8 @@ _Please don't create specific runners for your application. Your organization pr
 # Getting started with GitLab CI
 Use this document to get started with GitLab CI/CD. Before you start, you should have a project in GitLab that you would like to use CI/CD for. Let's start with a new project and build it using GitLab CI.
 
-📋 Create a _New Project_ by importing 
-- Import **Sample API project** from `https://gitlab.com/gitlab-codecamp/nodejs-sample-api.git` and name it as **nodejs-sample-api**. 
+📋 Create a _New Project_ by importing
+- Import **Sample API project** from `https://gitlab.com/gitlab-codecamp/nodejs-sample-api.git` and name it as **nodejs-sample-api**.
 - Create this new project under the subgroup (_named as your user id_) you created earlier.
 - The project URL should look like `https://git.nmlv.nml.com/learning/<YOUR-USER-ID>/nodejs-sample-api`
 
@@ -48,7 +48,7 @@ stages:
   - test
   - deploy
 
-build-job:       
+build-job:
   stage: build
   script:
     - echo "Hello, $GITLAB_USER_LOGIN!"
@@ -57,7 +57,7 @@ build-job:
 
 unit-test:
   stage: test
-  script: 
+  script:
     - echo "Running unit tests..."
     - echo "Unit test complete..."
 
@@ -65,11 +65,11 @@ security-test:
   stage: test
   script:
     - echo "Running security tests..."
-    - echo "Security tests complete..."  
+    - echo "Security tests complete..."
 
 deploy-job:      # This job runs in the deploy stage.
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
-  script:    
+  script:
     - echo "Deploying app from the $CI_COMMIT_BRANCH branch..."
     - echo "Application successfully deployed."
 ```
@@ -88,7 +88,7 @@ To view your pipeline:
 
   A pipeline with three stages should be displayed:
   ![](/imgs/three_stages_v15_4.png)
-  
+
   - To view a visual representation of your pipeline, select the pipeline ID.
   ![](/imgs/pipeline-graph-15_4.png)
 
