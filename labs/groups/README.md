@@ -26,7 +26,3 @@ For larger organizations, you can also create subgroups
 6. Click on "Create group" button.
 
 ![](/imgs/create-group.png)
-
-## Lab
-
-📋 Create a new project inside the group and clone the project on your machine.
