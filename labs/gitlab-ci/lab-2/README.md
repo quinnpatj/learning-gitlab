@@ -66,7 +66,7 @@ deploy-job:      # This job runs in the deploy stage.
 
 ```
 
-Update the `.gitlab-ci.yml` file with the below content and check the pipeline running
+Update the `.gitlab-ci.yml` file with the below content and check the **pipeline** running
 
 ```yaml
 stages:
