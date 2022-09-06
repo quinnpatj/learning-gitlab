@@ -43,3 +43,17 @@ A bug has been left intentionally in the above block. You need to debug and fix 
 </details><br/>
 
 <br/>
+
+## Tag and SHA
+`ref` can also be used for Git tag and Git SHA
+
+Example:
+```yaml
+  - project: 'my-group/my-project'
+    ref: v1.0.0  # Git Tag
+    file: '/templates/.gitlab-ci-template.yml'
+
+  - project: 'my-group/my-project'
+    ref: 787123b47f14b552955ca2786bc9542ae66fee5b  # Git SHA
+    file: '/templates/.gitlab-ci-template.yml'
+```    
