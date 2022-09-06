@@ -15,10 +15,12 @@ You can organize GitLab groups into subgroups. You can use subgroups to:
 3. Select Create group.
 4. Fill in the fields. View a list of [reserved names](https://docs.gitlab.com/ee/user/reserved_names.html) that cannot be used as group names.
 <br>
+
 - Group name as \<YOUR-USER-ID\>. 
 - The group URL will be auto-filled. 
 - Your user id is used to make the subgroup unique. 
 - You will be creating projects for learning under your subgroup.
+
 ![](/imgs/gitlab-subgroup.png)
     
 5. Select Create group.
