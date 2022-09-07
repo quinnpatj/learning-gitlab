@@ -57,6 +57,8 @@ A confirmation is displayed, including information about where your files are st
 
 ![](/imgs/ssh-1.png)
 
+On the preferences page, click `SSH Keys` on the left panel
+
 ![](/imgs/ssh-2.png)
 
 ****************************************
