@@ -105,7 +105,7 @@ This command works only if you cloned from a server to which you have write acce
 
 1. Go inside the cloned folder, for me it is `~/projects/learning-gitlab-1`
     ```
-    cd ~/gitlab/learning-gitlab-1
+    cd ~/projects/learning-gitlab-1
     ```
 2. Create a new empty file using the touch command
     ```
