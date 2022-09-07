@@ -44,6 +44,7 @@ $ cd verified-commits
 $ git init
 $ touch file1
 $ git add -A
+# regular commit
 $ git commit -m "file one commit"
 # now checking in the log
 $ git log
@@ -54,6 +55,7 @@ $ git log
 ```shell
 $ touch file2
 $ git add -A
+# signed commit -S
 $ git commit -S -m "file two commit, signed"
 $ git log
 # display information on signature
