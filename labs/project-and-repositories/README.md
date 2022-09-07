@@ -28,14 +28,13 @@ There are three ways of creating projects in GitLab:
 <br>
 
 ### Create blank project
-> 1. Enter project name and select the namespace as your "username". 
+> 1. Enter project name as "learning-gitlab-1" and select the namespace as your "username". 
 > 2. Adjust the project slug (if required) and add description (optional). 
-> 3. Leave the "Project deployment target" as it is. 
-> 4. Select project visibility as "public".
-> 5. Uncheck the "Initialize repository with a README" 
-> 6. Click on "Create Project" button.
+> 3. Select project visibility as "internal".
+> 4. Uncheck the "Initialize repository with a README" 
+> 5. Click on "Create Project" button.
 
-![](/imgs/new-project-3.png)
+![](/imgs/create-blank-project.png)
 
 <br>
 You will be presented with the below screen with some more details. You will see this screen only if the project is an empty project otherwise the project contents will be visible. The left menu provides navigation links for your project.
@@ -56,8 +55,8 @@ You will be presented with the below screen with some more details. You will see
 ![](/imgs/update-project-1.png)
 ![](/imgs/update-project-2.png)
 
-2. Change the project name to "Learning GitLab!!" and click on save. 
-3. See what happens, to fix the error provide "hello-gitlab" as the project name.
+3. See what happens, if you change the project name to "Learning GitLab!!" and click on save. Special characters are not allowed in project name.
+3. Provide "hello-gitlab" as the project name.
 4. In the topics text box add "learning", "gitlab" and "hello-world"
 5. In the description textbox put "learning gitlab project" 
 6. Add Project avatar (optional)
