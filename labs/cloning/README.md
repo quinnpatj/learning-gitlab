@@ -9,7 +9,7 @@ Cloning creates a local copy of the remote repository. Repositories are connecte
 
 ## Cloning a gitlab project
 
-Visit the blank project page we created (https://git.nmlv.nml.com/gitlab/learning/\<YOUR-USER-ID\>/learning-gitlab-1) and follow the steps defined in the page instructions.
+Visit the blank project page we created `https://git.nmlv.nml.com/gitlab/learning/<YOUR-USER-ID>/learning-gitlab-1` and follow the steps defined in the page instructions.
 
 ```shell
 git clone git@git.nmlv.nml.com:learning/<USER-ID>/learning-gitlab-1.git
