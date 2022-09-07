@@ -126,7 +126,7 @@ git config commit.gpgSign true
 
 ![](/imgs/verified-commit-history.png)
 
-# Revoke a GPG key
+## Revoke a GPG key
 
 If a GPG key becomes compromised, revoke it. Revoking a key changes both future and past commits:
 
@@ -136,11 +136,11 @@ If a GPG key becomes compromised, revoke it. Revoking a key changes both future 
 To revoke a GPG key:
 
   1. In the top-right corner, select your avatar.
-  2. Select Edit profile.
-  3. On the left sidebar, select GPG Keys ().
-  4. Select Revoke next to the GPG key you want to delete.
+  2. Select **Edit profile**.
+  3. On the left sidebar, select **GPG Keys**.
+  4. Select **Revoke** next to the GPG key you want to delete.
 
-# Remove a GPG key
+## Remove a GPG key
 
 When you remove a GPG key from your GitLab account:
 
@@ -150,8 +150,8 @@ When you remove a GPG key from your GitLab account:
 To remove a GPG key from your account:
 
   1. In the top-right corner, select your avatar.
-  2. Select Edit profile.
-  3. On the left sidebar, select GPG Keys ().
-  4. Select Remove () next to the GPG key you want to delete.
+  2. Select **Edit profile**.
+  3. On the left sidebar, select **GPG Keys**.
+  4. Select **Remove** next to the GPG key you want to delete.
 
 If you must unverify both future and past commits, revoke the associated GPG key instead.
