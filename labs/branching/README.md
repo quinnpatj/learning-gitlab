@@ -6,7 +6,7 @@ For this Lab we will be using our `learning-gitlab-1` project. From the GitLab d
 
 ![](/imgs/branches-1.png)
 
-> Click on "New branch"
+> Click on **"New branch"**
 
 ![](/imgs/branches-2.png)
 
