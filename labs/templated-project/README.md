@@ -21,7 +21,7 @@ Create a project pre-populated with the necessary files to get you started quick
 ### Create from template
 > 1. Enter project name as "my-spring-project"
 > 2. Adjust the project slug (if required) and add description (optional). 
-> 3. Select project visibility as "public".
+> 3. Select project visibility as "internal".
 > 4. Click on "Create Project" button.
 
 ![](/imgs/new-project-template-3.png)
