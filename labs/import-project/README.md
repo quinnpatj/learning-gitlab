@@ -21,7 +21,7 @@ Migrate your data from an external source.
 ### Enter below details
 > 1. Git repository URL: https://github.com/ashishjuyal/banking.git
 > 2. Adjust the project slug (if required) and add description (optional). 
-> 3. Select project visibility as "public".
+> 3. Select project visibility as "internal".
 > 4. Click on "Create Project" button.
 
 <br>
