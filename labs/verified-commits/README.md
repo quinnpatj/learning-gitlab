@@ -85,10 +85,11 @@ $ git log --show-signature
 
 # Add a GPG key to your GitLab account
 
-Export the GPG public key and store it in the clipboard. Run this command, replacing <EMAIL> with the email address you used when you generated the key:
+Export the GPG public key and store it in the clipboard. Run this command, replacing <KEY ID> received from the output of first command. <EMAIL> is the email address you used when you generated the key:
 
 ```shell
-$ gpg --export --armor <EMAIL> | clip.exe
+$ gpg --list-secret-keys --keyid-format LONG <EMAIL>
+$ gpg --export --armor <KEY ID> | clip.exe
 ```
 
 To add a GPG key to your user settings:
@@ -114,9 +115,19 @@ After you create your GPG key and add it to your account, you must configure Git
 gpg --list-secret-keys --keyid-format LONG <EMAIL>
 ```
 
+2. Copy the GPG private key ID that starts with `sec`. In this example, the private key ID is `30F2B65B9246B6CA`:
+
+```text
+sec   rsa4096/30F2B65B9246B6CA 2017-08-18 [SC]
+      D5E4F29F3275DC0CDA8FFC8730F2B65B9246B6CA
+uid                   [ultimate] Mr. Robot <your_email>
+ssb   rsa4096/B7ABC0813E4028C0 2017-08-18 [E]
+```
+
+3. Add to `git config`:
 ```shell
 # adding configuration on the local config i.e. ".git/config"
-git config user.signingkey <EMAIL>
+git config user.signingkey <KEY ID>
 git config commit.gpgSign true
 ```
 
@@ -126,7 +137,7 @@ git config commit.gpgSign true
 
 ![](/imgs/verified-commit-history.png)
 
-## Revoke a GPG key
+## Revoke a GPG key from GitLab (optional)
 
 If a GPG key becomes compromised, revoke it. Revoking a key changes both future and past commits:
 
@@ -140,7 +151,7 @@ To revoke a GPG key:
   3. On the left sidebar, select **GPG Keys**.
   4. Select **Revoke** next to the GPG key you want to delete.
 
-## Remove a GPG key
+## Remove a GPG key from GitLab (optional)
 
 When you remove a GPG key from your GitLab account:
 
@@ -155,3 +166,26 @@ To remove a GPG key from your account:
   4. Select **Remove** next to the GPG key you want to delete.
 
 If you must unverify both future and past commits, revoke the associated GPG key instead.
+
+## Delete a GPG key from your keyring (optional)
+
+1. Run this command to delete the GPG key from your keyring, replacing <EMAIL> with the email address for your key:
+
+```shell
+$ gpg --delete-keys <EMAIL> 
+```
+This will result in an error as shown below:
+![](/imgs/gpg-delete-keys-1.png)
+
+2. You need to delete the secret keys first
+```shell
+$ gpg --delete-secret-keys <EMAIL> 
+```
+![](/imgs/gpg-delete-keys-2.png)
+
+3. And finally delete the GPG key
+```shell
+$ gpg --delete-keys <EMAIL> 
+```
+
+![](/imgs/gpg-delete-keys-3.png)
