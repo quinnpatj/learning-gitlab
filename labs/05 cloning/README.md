@@ -123,7 +123,7 @@ This command works only if you cloned from a server to which you have write acce
     ```
 5. Push to the remote server
     ```shell
-    git push -u origin master
+    git push -u origin main
     ```
 
 ## Lab 2
@@ -143,7 +143,7 @@ The Shining
 echo $'Gone with the wind\nOne Flew Over The Cuckoo\'s Nest\nThe Shining\n' > movies.md
 git add movies.md
 git commit -m "added some movies"
-git push origin master
+git push origin main
 ```
 
 
