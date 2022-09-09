@@ -19,7 +19,7 @@ include:
 <br>
 
 - update the `.gitlab-ci.yml` file with below content. 
-- stage, commit and push changes and see the pipeline running.
+- `stage`, `commit` and `push` changes and see the pipeline running.
 - check the `build` stage output for confirmation.
 
 ```yaml
