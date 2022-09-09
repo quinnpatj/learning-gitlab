@@ -1,0 +1,24 @@
+build-job:
+  stage: build
+  script:
+    - echo "Hello, $GITLAB_USER_LOGIN!"
+    - echo "Compiling the code..."
+    - echo "Compile complete."
+
+unit-test:
+  stage: test
+  script:
+    - echo "Running unit tests..."
+    - echo "Unit test complete..."
+
+security-test:
+  stage: test
+  script:
+    - echo "Running security tests..."
+    - echo "Security tests complete..."
+
+deploy-job:      # This job runs in the deploy stage.
+  stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
+  script:
+    - echo "Deploying app from the $CI_COMMIT_BRANCH branch..."
+    - echo "Application successfully deployed."

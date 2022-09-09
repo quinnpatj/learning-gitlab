@@ -1,0 +1,19 @@
+stages:
+  - build
+  - test
+  - deploy
+
+# include: '/templates/.gitlab-ci-template.yml'
+
+#include:
+#  - project: 'learning/gitlab-ci-templates'
+#    ref: nodejs-builds
+#    file: '/templates/.gitlab-ci-template.yml'
+
+include:
+  - project: 'learning/gitlab-ci-templates'
+    ref: master
+    file: 
+      - '/multi-templates/build.yml'
+      - '/multi-templates/test.yml'
+      - '/multi-templates/deploy.yml'
