@@ -30,9 +30,6 @@ Use this document to get started with GitLab CI/CD. Before you start, you should
 
 </details><br/>
 
-<br/>
-
-
 📋 Clone the project locally and create a `.gitlab-ci.yml` (pay attention to the starting `dot` in filename) file at the root of your repository. This file is where you configure specific instructions for GitLab CI/CD jobs.
 
 > Open project in visual studio code and create the file inside it (recommended)
@@ -43,7 +40,7 @@ Use this document to get started with GitLab CI/CD. Before you start, you should
   ```script
   git clone git@git.nmlv.nml.com:learning/<USER-ID>/nodejs-sample-api.git
   ```
-</details><br>
+</details>
 
 In this file, you define:
   - The structure and order of jobs that the runner should execute.
@@ -99,7 +96,7 @@ deploy-job:      # This job runs in the deploy stage.
   git commit -m "adding CI configuration"
   git push origin main
   ```
-</details><br>
+</details>
 
 ### View the status of your pipeline and jobs
 When you push your changes, a pipeline started.
