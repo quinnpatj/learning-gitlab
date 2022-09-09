@@ -1,0 +1,36 @@
+---
+variables:
+  KUBE_NAMESPACE: devops-bootcamp
+  #### Uncomment this var if you want to see the delete jobs in the pipeline ####
+  # KUBE_DELETE_DRY_RUN: "false"
+
+stages:
+  - Build
+  - Pre-Build
+  - Scans
+  - Quality Scan
+  - Post-Build
+  - Deploy Training
+
+
+include:
+  # https://git.nmlv.nml.com/gitlab/gitlabci-template-v2
+  - project: gitlab/gitlabci-template-v2
+    ref: 4.5.10
+    file: full-pipelines/kube-aws/pipeline.yml
+  # https://git.nmlv.nml.com/gitlab/gitlabci-template/-/tree/v1.15.12
+  - project: 'gitlab/gitlabci-template'
+    ref: v1.17.2
+    file: '/deploy/appplat/.deploy-kube-training-v0.0.1.yml'
+
+
+Unit Tests:
+  stage: Scans
+  image: regt.nmlv.nml.com/$CI_PROJECT_PATH:$CI_COMMIT_SHA
+  script:
+    - npm install --quiet
+    - npm run test
+  artifacts:
+    when: always
+    paths:
+      - coverage

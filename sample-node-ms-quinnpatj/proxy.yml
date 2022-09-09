@@ -1,0 +1,54 @@
+---
+
+apiVersion: kanali.io/v1
+kind: ApiProxy
+metadata:
+  name: sample-node-ms-qui8039
+  namespace: devops-bootcamp
+spec:
+  path: /v1/ms/app
+  target: /api/v1/ms/app
+  service:
+    port: 443
+    labels:
+    - name: contextRoot
+      value: ms/app
+    - name: deployment
+      header: x-nm-deployment
+    - name: version
+      value: v1
+  plugins:
+  - name: apiKey
+  ssl:
+    secretName: "devops-bootcamp-lastmile"
+
+---
+
+apiVersion: kanali.io/v1
+kind: ApiKeyBinding
+metadata:
+  name: sample-node-ms-qui8039
+  namespace: devops-bootcamp
+spec:
+  proxy: sample-node-ms-qui8039
+  keys:
+  - name: nmlvhub-postdeployverify
+    defaultRule:
+      global: true
+  - name: nm-monitoring
+    defaultRule:
+      global: false
+    subpaths:
+      - path: /health
+        rule:
+          granular:
+            verbs: [GET]  
+  - name: nm-apiregistry
+    defaultRule:
+      global: false
+    subpaths:
+      # required for apiregistry to access your swagger file
+      - path: /doc
+        rule:
+          granular:
+            verbs: [GET]

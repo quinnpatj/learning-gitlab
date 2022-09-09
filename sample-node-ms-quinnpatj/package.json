@@ -1,0 +1,59 @@
+{
+  "name": "sample-node-ms-qui8039",
+  "description": "lab-6-generators",
+  "repository": {
+    "type": "git",
+    "url": "http://git.nmlv.nml.com/learning/qui8039/sample-node-ms-qui8039.git"
+  },
+  "engines": {
+    "node": ">=16.0.0 <17.0.0"
+  },
+  "scripts": {
+    "prettier": "prettier-standard \"*.js\" \"**/*.js\"",
+    "pretest": "npm run prettier && npm run lint",
+    "preinstall": "npx force-resolutions",
+    "start": "NODE_CONFIG_STRICT_MODE=1 node index.js",
+    "test": "jest",
+    "dev-int": "NODE_CONFIG_STRICT_MODE=1 GIT_COMMIT=12345 NODE_ENV=development NODE_APP_INSTANCE=int nodemon index.js",
+    "dev": "NODE_CONFIG_STRICT_MODE=1 NODE_ENV=development nodemon index.js",
+    "clean": "rm -rf ./build ./node_modules",
+    "lint": "eslint . --ext .js --fix",
+    "integration": "mocha ./integrationspec/int-spec.js",
+    "integration-local": "pkill '^node$' || true; export GIT_COMMIT=DEVELOPMENT ; NODE_CONFIG_STRICT_MODE=1 NODE_ENV=development NODE_APP_INSTANCE=int node index.js & sleep 5 ; GIT_COMMIT=DEVELOPMENT environment=development apikey=NO_APIKEY mocha ./integrationspec/int-spec.js && pkill '^node$'"
+  },
+  "dependencies": {
+    "@nm/newrelic-config": "1.1.1",
+    "artillery": "^1.6.0-27",
+    "async": "^3.1.0",
+    "config": "^3.3.7",
+    "cookie-parser": "^1.4.4",
+    "deep-diff": "^1.0.2",
+    "express": "^4.17.3",
+    "express-validation": "^1.0.2",
+    "helmet": "^3.18.0",
+    "jest": "^25.5.4",
+    "jest-sonar-reporter": "^2.0.0",
+    "joi": "14.3.1",
+    "mocha": "^6.1.4",
+    "newrelic": "8.9.1",
+    "nmlvhub-node-certs-lastmile": "^1.0.3",
+    "nmlvhub-node-integrationtests-diffreport": "^1.0.0",
+    "nmlvhub-node-logger": "^2.4.5",
+    "supertest": "^4.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "nodemon": "^2.0.2",
+    "npm-force-resolutions": "^0.0.10",
+    "prettier-standard": "^9.1.1",
+    "standard": "^17.0.0"
+  },
+  "resolutions": {
+    "unset-value": "^2.0.1"
+  },
+  "license": "UNLICENSED",
+  "jestSonar": {
+    "reportPath": "./coverage",
+    "reportFile": "sonar-unit-report.xml"
+  }
+}

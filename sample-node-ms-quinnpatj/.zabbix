@@ -1,0 +1,14 @@
+int:
+    slack: unknown
+    zerotouch_alert: enabled
+    zerotouch_availability: slack
+
+qa:
+    slack: unknown
+    zerotouch_alert: enabled
+    zerotouch_availability: slack
+
+prod:
+    slack: unknown
+    zerotouch_alert: enabled
+    zerotouch_availability: slack

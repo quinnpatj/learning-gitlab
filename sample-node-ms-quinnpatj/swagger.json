@@ -1,0 +1,152 @@
+{
+  "swagger": "2.0",
+  "x-nm-api-tags": {
+		"v1": {
+			"domain": "xxxxx",
+			"subdomain": "xxxxx",
+			"scope": "enterprise",
+			"dataClassification": "confidential",
+			"pii": true,
+			"dataLatency": "5m",
+			"utan": "xxxxx"
+		}
+	},  
+  "info": {
+    "version": "",
+    "title": "LV Integration Hub - ms/app Service",
+    "description": "lab-6-generators"
+  },
+  "host": "api.nmlv.nml.com",
+  "basePath": "/api/v1",
+  "schemes": ["http", "https"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/ms/app/health": {
+      "get": {
+        "summary": "Returns health of the service",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "header",
+            "type": "string",
+            "description": "apikey that allows access to the service"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns health of the service",
+            "schema": {
+              "$ref": "#/definitions/healthResponse"
+            }
+          },
+          "500": {
+            "description": "internal service error",
+            "schema": {
+              "properties": {
+                "msg": {
+                  "description": "error description text",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Health"]
+      }
+    },
+    "/ms/app/doc": {
+      "get": {
+        "summary": "Returns swagger doc of the service",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "header",
+            "type": "string",
+            "description": "apikey that allows access to the service"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns swagger doc of the service",
+            "schema": {
+              "properties": {
+                "msg": {
+                  "description": "error description text",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "internal service error",
+            "schema": {
+              "properties": {
+                "msg": {
+                  "description": "error description text",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Doc"]
+      }
+    },
+    "/ms/app": {
+      "get": {
+        "summary": "Get ms/app information",
+        "parameters": [
+          {
+            "name": "apikey",
+            "in": "header",
+            "type": "string",
+            "description": "apikey that allows access to the service"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns ms/app information",
+            "schema": {
+              "$ref": "#/definitions/ms/app"
+            }
+          },
+          "500": {
+            "description": "internal service error",
+            "schema": {
+              "properties": {
+                "msg": {
+                  "description": "error description text",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "healthResponse": {
+      "properties": {
+        "Node Host": {
+          "description": "node hostname for the service that made the response",
+          "type": "string"
+        },
+        "Git SHA": {
+          "description": "GitLab Commit SHA for this microservice image",
+          "type": "string"
+        }
+      }
+    },
+    "ms/app": {
+      "properties": {
+        "id": {
+          "description": "ms/app identifier",
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    }
+  }
+}

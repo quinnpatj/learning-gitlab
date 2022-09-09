@@ -1,0 +1,7 @@
+{
+  "validationConfig": {
+    "detailedErrors": true
+  },
+  "NEW_RELIC_KEY": "",
+  "APP_NAME": "sample-node-ms-qui8039"
+}

@@ -1,0 +1,11 @@
+__tests__
+.git
+coverage
+node_modules
+.editorconfig
+.gitlab-ci.yml
+.gitignore
+.prettierignore
+Dockerfile
+README.md
+sonar-project.properties

@@ -1,0 +1,26 @@
+config:
+  target: 'http://localhost:8080/api/v1/ms/app'
+  payload:
+    fields:
+      - 'nmUniqueId'
+  environments:
+    int:
+      target: 'https://api-int.nmlv.nml.com/v1/ms/app'
+    prod:
+      target: 'https://api.nmlv.nml.com/v1/ms/app'
+  phases:
+    - duration: 60
+      arrivalRate: 50
+  ensure:
+    p95: 250
+  processor: './utils.js'
+  defaults:
+    headers:
+      x-nm-deployment: 'pre-release'
+      x-nm-nm_uid: '{{ nmUniqueId }}'
+      x-nm-user-type: 'C'
+scenarios:
+  - flow:
+    - get:
+        url: '/client/{{ nmUniqueId }}'
+        beforeRequest: 'appendApikeyHeader'

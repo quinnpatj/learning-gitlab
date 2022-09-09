@@ -1,0 +1,21 @@
+config:
+  target: 'http://localhost:8080/api/v1/ms/app'
+  environments:
+    int:
+      target: 'https://api-int.nmlv.nml.com/v1/ms/app'
+    prod:
+      target: 'https://api.nmlv.nml.com/v1/ms/app'
+  phases:
+    - duration: 30
+      arrivalRate: 50
+  ensure:
+    p95: 250
+  processor: './utils.js'
+  defaults:
+    headers:
+      x-nm-deployment: 'pre-release'
+scenarios:
+  - flow:
+    - get:
+        url: '/health'
+        beforeRequest: 'appendApikeyHeader'

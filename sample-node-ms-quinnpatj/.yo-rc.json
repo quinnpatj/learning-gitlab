@@ -1,0 +1,18 @@
+{
+  "generator-node-ms": {
+    "promptValues": {
+      "repoName": "sample-node-ms-qui8039",
+      "groupName": "learning/qui8039",
+      "description": "lab-6-generators",
+      "projectVersion": "1.0.0",
+      "contextRoot": "ms/app",
+      "kubeCluster": "Training",
+      "kubeNamespace": "devops-bootcamp",
+      "newRelicKey": "",
+      "biipcloud": false,
+      "rds": false,
+      "alertSlackChannel": "unknown"
+    },
+    "generator-node-ms-version": "3.8.7"
+  }
+}

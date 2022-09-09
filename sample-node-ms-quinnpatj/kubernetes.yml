@@ -1,0 +1,116 @@
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: zsample-node-ms-qui8039
+  namespace: devops-bootcamp
+  labels:
+    contextRoot: "ms/app"
+    type: "ms"
+    version: "v1"
+    deployment: pre-release
+  annotations:
+spec:
+  ports:
+    - name: https
+      port: 443
+      targetPort: 8443
+      protocol: TCP
+  type: ClusterIP
+  selector:
+    app: sample-node-ms-qui8039
+    sha: "{{ git_sha[0:7] }}"
+
+---
+
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: sample-node-ms-qui8039-{{ git_sha[0:7] }}
+  namespace: devops-bootcamp
+  labels:
+    expiration: "{{ lookup('pipe','date -d \"+2 days\" +%Y%m%d%H%M%S') }}"
+    app: sample-node-ms-qui8039
+    sha: "{{ git_sha[0:7] }}"
+spec:
+  template:
+    metadata:
+      labels:
+        app: sample-node-ms-qui8039
+        sha: "{{ git_sha[0:7] }}"
+    spec:
+      containers:
+        - name: sample-node-ms-qui8039
+          image: "{{ docker_registry }}/learning/qui8039/sample-node-ms-qui8039:{{ docker_version }}"
+          livenessProbe:
+            httpGet:
+              path: "/api/v1/ms/app/health"
+              port: 8080
+            initialDelaySeconds: 15
+            timeoutSeconds: 1
+          readinessProbe:
+            httpGet:
+              path: "/api/v1/ms/app/health"
+              port: 8080
+            initialDelaySeconds: 15
+            timeoutSeconds: 1
+          resources:
+            limits:
+              cpu: "200m"
+              memory: "200Mi"
+            requests:
+              cpu: "100m"
+              memory: "100Mi"
+          env:
+            - name: "NODE_ENV"
+              valueFrom:
+                configMapKeyRef:
+                  name: default
+                  key: node.environment
+            - name: "NODE_APP_INSTANCE"
+              valueFrom:
+                configMapKeyRef:
+                  name: default
+                  key: node.app.instance
+            - name: "BUNYAN_LOG_LEVEL"
+              valueFrom:
+                configMapKeyRef:
+                  name: default
+                  key: bunyan.log.level
+          ports:
+            - containerPort: 8443
+            - containerPort: 8080
+          volumeMounts:
+            - name: "lastmile"
+              mountPath: "/var/run/secrets/kubernetes.io/lastmile"
+              readOnly: true
+            - name: "default-configmap"
+              mountPath: "/var/run/configmap/kubernetes.io/default"
+      volumes:
+        - name: "lastmile"
+          secret:
+            secretName: "devops-bootcamp-lastmile"
+        - name: "default-configmap"
+          configMap:
+            name: "default"
+  selector:
+    matchLabels:
+      app: sample-node-ms-qui8039
+      sha: "{{ git_sha[0:7] }}"
+
+---
+
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: sample-node-ms-qui8039-{{ git_sha[0:7] }}
+  namespace: devops-bootcamp
+spec:
+  maxReplicas: 9
+  minReplicas: 3
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: sample-node-ms-qui8039-{{ git_sha[0:7] }}
+  targetCPUUtilizationPercentage: 100
