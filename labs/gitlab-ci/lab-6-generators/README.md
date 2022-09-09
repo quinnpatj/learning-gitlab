@@ -1,6 +1,6 @@
 # Generators
 
-Generators provide a skeleton for projects following the company standards. The generators also provide you a suggested order for a pipeline along with the pre-defined standard include files developed by NM. You don't need to create your build scripts and all that is available using the include files:
+Generators provides a skeleton for projects following the company standards. The generators also provide you a suggested order for a pipeline along with the pre-defined standard include files developed by NM. You don't need to create your build scripts and all that is available using the include files:
 
 Here is a suggested order for a pipeline that is deploying a micro-service to the Hub Kubernetes cluster:
 
