@@ -112,7 +112,6 @@ To view your pipeline:
 
   - To view details of a job, select the job name, for example, deploy-job.
   ![](/imgs/job-details_15_4.png)
-<br>
 
 # Pipeline Editor
 After you create your first `.gitlab-ci.yml` file, you can use the [pipeline editor](https://docs.gitlab.com/ee/ci/pipeline_editor/index.html) for all future edits to the file. With the pipeline editor, you can:
