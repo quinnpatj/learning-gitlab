@@ -18,7 +18,9 @@ include:
   <summary>Not sure?</summary>
 <br>
 
-Update the `.gitlab-ci.yml` file with below content and see the pipeline running and check the `build` stage output for confirmation:
+- update the `.gitlab-ci.yml` file with below content. 
+- `stage`, `commit` and `push` changes and see the pipeline running.
+- check the `build` stage output for confirmation.
 
 ```yaml
 stages:

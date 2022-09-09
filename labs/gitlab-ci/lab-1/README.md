@@ -30,16 +30,21 @@ Use this document to get started with GitLab CI/CD. Before you start, you should
 
 </details><br/>
 
-<br/>
+📋 Clone the project locally and create a `.gitlab-ci.yml` (pay attention to the starting `dot` in filename) file at the root of your repository. This file is where you configure specific instructions for GitLab CI/CD jobs.
 
+> Open project in visual studio code and create the file inside it (recommended)
 
-📋 Create a `.gitlab-ci.yml` (pay attention to the starting `dot` in filename) file at the root of your repository. This file is where you configure specific instructions for GitLab CI/CD jobs.
+<details>
+  <summary>Not sure?</summary>
+
+  ```script
+  git clone git@git.nmlv.nml.com:learning/<USER-ID>/nodejs-sample-api.git
+  ```
+</details>
 
 In this file, you define:
   - The structure and order of jobs that the runner should execute.
   - The decisions the runner should make when specific conditions are encountered.
-
-![](/imgs/new-file-in-repo.png)
 
 - add the following content to the `.gitlab-ci.yml` file and define a CI pipeline
 ```yaml
@@ -80,8 +85,21 @@ deploy-job:      # This job runs in the deploy stage.
 >  - `stage` describes the sequential execution of jobs. Jobs in a single stage run in parallel as long as there are available runners.
 >  - Use [Directed Acyclic Graphs (DAG)](https://docs.gitlab.com/ee/ci/directed_acyclic_graph/index.html) keywords to run jobs out of stage order.
 
+- Stage the `.gitlab-ci.yml` file and commit the changes
+- Push the changes to the remote server
+
+<details>
+  <summary>Not sure?</summary>
+
+  ```shell
+  git add .gitlab-ci.yml
+  git commit -m "adding CI configuration"
+  git push origin main
+  ```
+</details>
+
 ### View the status of your pipeline and jobs
-When you committed your changes, a pipeline started.
+When you push your changes, a pipeline started.
 
 To view your pipeline:
   - Go to **CI/CD > Pipelines**.
@@ -94,10 +112,9 @@ To view your pipeline:
 
   - To view details of a job, select the job name, for example, deploy-job.
   ![](/imgs/job-details_15_4.png)
-<br>
 
 # Pipeline Editor
-After you create your first `.gitlab-ci.yml` file, use the [pipeline editor](https://docs.gitlab.com/ee/ci/pipeline_editor/index.html) for all future edits to the file. With the pipeline editor, you can:
+After you create your first `.gitlab-ci.yml` file, you can use the [pipeline editor](https://docs.gitlab.com/ee/ci/pipeline_editor/index.html) for all future edits to the file. With the pipeline editor, you can:
 
   - Edit the pipeline configuration with automatic syntax highlighting and validation.
   - View the CI/CD configuration visualization, a graphical representation of your `.gitlab-ci.yml` file.

@@ -21,7 +21,9 @@ include:
   <summary>Not sure?</summary>
 <br>
 
-Update the `.gitlab-ci.yml` file with below content and see the pipeline running and check the `build` stage output for confirmation:
+- update the `.gitlab-ci.yml` file with below content. 
+- `stage`, `commit` and `push` changes and see the pipeline running.
+- check the `build` stage output for confirmation.
 
 ```yaml
 stages:
@@ -42,8 +44,6 @@ A bug has been left intentionally in the above block. You need to debug and fix 
 </details>
 </details><br/>
 
-<br/>
-
 ## Tag and SHA
 `ref` can also be used for Git tag and Git SHA
 
@@ -56,4 +56,4 @@ Example:
   - project: 'my-group/my-project'
     ref: 787123b47f14b552955ca2786bc9542ae66fee5b  # Git SHA
     file: '/templates/.gitlab-ci-template.yml'
-```    
+```
