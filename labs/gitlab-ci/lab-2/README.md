@@ -36,7 +36,9 @@ You can also use shorter syntax to define the path:
 include: '/templates/.gitlab-ci-template.yml'
 ```
 
-📋 Lab: Create a file `.gitlab-ci-template.yml` inside `templates` folder and add the below content:
+📋 Lab: 
+
+- Create a file `.gitlab-ci-template.yml` inside `templates` folder (you have to create the folder) and add the below content:
 
 ```yaml
 build-job:
@@ -66,7 +68,7 @@ deploy-job:      # This job runs in the deploy stage.
 
 ```
 
-Update the `.gitlab-ci.yml` file with the below content and check the **pipeline** running
+- Update the `.gitlab-ci.yml` file with the below content and save
 
 ```yaml
 stages:
@@ -77,3 +79,6 @@ stages:
 include: '/templates/.gitlab-ci-template.yml'
 
 ```
+
+- Stage all the changed files and commit the changes
+- Push the changes to the remote server and see the **pipeline** running
